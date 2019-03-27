@@ -1,0 +1,61 @@
+netcdf FjordOs_river_2013_2017_2018avg_dramsfjord_42 {
+dimensions:
+	river = 46 ;
+	s_rho = 100 ;
+	river_time = UNLIMITED ; // (2193 currently)
+variables:
+	float river_Eposition(river) ;
+		river_Eposition:field = "river_Eposition, scalar" ;
+		river_Eposition:long_name = "river ETA-position at RHO-points" ;
+		river_Eposition:units = "nondimensional" ;
+		river_Eposition:valid_max = 899. ;
+		river_Eposition:valid_min = 1. ;
+	float river(river) ;
+		river:long_name = "river runoff identification number" ;
+		river:units = "nondimensional" ;
+		river:field = "river, scalar" ;
+	float river_Vshape(s_rho, river) ;
+		river_Vshape:long_name = "river runoff mass transport vertical profile" ;
+		river_Vshape:units = "nondimensional" ;
+		river_Vshape:field = "river_Vshape, scalar" ;
+	float river_Xposition(river) ;
+		river_Xposition:long_name = "river XI-position at RHO-points" ;
+		river_Xposition:units = "nondimensional" ;
+		river_Xposition:valid_min = 1. ;
+		river_Xposition:valid_max = 299. ;
+		river_Xposition:field = "river_Xposition, scalar" ;
+	float river_direction(river) ;
+		river_direction:long_name = "river runoff direction" ;
+		river_direction:units = "nondimensional" ;
+		river_direction:field = "river_direction, scalar" ;
+	float river_salt(river_time, s_rho, river) ;
+		river_salt:long_name = "river runoff salinity" ;
+		river_salt:units = "PSU" ;
+		river_salt:field = "river_salt, scalar, series" ;
+		river_salt:time = "river_time" ;
+	float river_temp(river_time, s_rho, river) ;
+		river_temp:long_name = "river runoff potential temperature" ;
+		river_temp:units = "Celsius" ;
+		river_temp:field = "river_temp, scalar, series" ;
+		river_temp:time = "river_time" ;
+	double river_time(river_time) ;
+		river_time:field = "river_time, scalar, series" ;
+		river_time:long_name = "river runoff time" ;
+		river_time:units = "seconds since 1970-01-01 00:00:00" ;
+	float river_transport(river_time, river) ;
+		river_transport:long_name = "river runoff vertically integrated mass transport" ;
+		river_transport:units = "meter3 second-1" ;
+		river_transport:field = "river_transport, scalar, series" ;
+		river_transport:time = "river_time" ;
+
+// global attributes:
+		:type = "ROMS river forcing file" ;
+		:title = "River forcing" ;
+		:grd_file = "fjordos_grid.nc" ;
+		:rivers = "Rivers in Oslofjorden" ;
+		:institution = "NIVA" ;
+		:Conventions = "CF-1.0" ;
+		:history = "Created by ans@niva.no 14.1.2018" ;
+		:NCO = "\"4.6.3\"" ;
+		:nco_openmp_thread_number = 1 ;
+}
