@@ -61,7 +61,7 @@ class Params(object):
             ['VARFILE',GlobalParams.METROMSAPPDIR+"/"+app+"/include/varinfo.dat"],
             ['XPOINTS',"114"],  #Could read from grd-file?
             ['YPOINTS',"174"],  #Could read from grd-file?
-            ['NLEVELS',"100"],  #Could read from grd-file?
+            ['NLEVELS',"42"],  #Could read from grd-file?
             ['GRDTHETAS',"3.0d0"],
             ['GRDTHETAB',"0.5d0"],
             ['GRDTCLINE',"15.0d0"],            
@@ -94,12 +94,12 @@ class Params(object):
             ['NUDGZONEWIDTH',"15"],
             ['GRDFILE',GlobalParams.METROMSAPPDIR+"/"+app+"/grid/FjordOs_grd_v9_dramsfjord.nc"],
             ['RUNDIR',self.RUNPATH],
-            ['_CLMNAME_',self.RUNPATH+"/ocean_clm_100.nc"],
-            ['_BRYNAME_',self.RUNPATH+'/ocean_bry_100.nc'],
+            ['_CLMNAME_',self.RUNPATH+"/ocean_clm.nc"],
+            ['_BRYNAME_',self.RUNPATH+'/ocean_bry.nc'],
             ['_NUDNAME_',self.RUNPATH+'/ocean_nud_dramsfjord.nc'],
             ['TIDEDIR',GlobalParams.METROMSAPPDIR+"/"+app+"/tide/FjordOs_tide_CL_v3_dramsfjord.nc"],
             ['ATMDIR',self.RUNPATH+"/fjordos_atmos.nc"],
-            ['RIVERFILE',GlobalParams.METROMSAPPDIR+"/"+app+"/rivers/FjordOs_river_2013_2017_2018avg_dramsfjord_100.nc"],
+            ['RIVERFILE',GlobalParams.METROMSAPPDIR+"/"+app+"/rivers/FjordOs_river_2013_2017_2018avg_dramsfjord_42.nc"],
             ['FORCEFILES',"2"], 
             ['COUPLINGTIMEI2O',str(self.COUPLINGTIME_I2O)],
             ['ROMSINFILE', self.ROMSINFILE ],
